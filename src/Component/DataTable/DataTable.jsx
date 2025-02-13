@@ -5,11 +5,12 @@ const DataTable = ({ columns, fetchData }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchDataAsync = async () => {
       const result = await fetchData();
       setData(result.data); 
     };
-    fetchData();
+
+    fetchDataAsync();
   }, [fetchData]);
 
   const displayColumn = () =>
